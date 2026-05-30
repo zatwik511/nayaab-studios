@@ -1,9 +1,21 @@
 import { useState } from 'react'
 
 const locations = [
-  { city: 'Chandigarh', icon: '📍' },
-  { city: 'Mohali', icon: '📍' },
-  { city: 'Zirakpur', icon: '📍' },
+  {
+    city: 'Mohali',
+    address: 'Sector 74, Mohali, Punjab 160055',
+    mapsUrl: 'https://maps.app.goo.gl/Dkw7PEsjA9J1RqgY8',
+  },
+  {
+    city: 'Chandigarh',
+    address: 'Chandigarh, Punjab',
+    mapsUrl: 'https://www.google.com/maps/search/Nayaab+Studios+Chandigarh',
+  },
+  {
+    city: 'Zirakpur',
+    address: 'Zirakpur, Punjab',
+    mapsUrl: 'https://www.google.com/maps/search/Nayaab+Studios+Zirakpur',
+  },
 ]
 
 const inputClass = 'w-full px-4 py-2.5 rounded-lg border border-gray-700 bg-gray-900 text-white text-sm placeholder-gray-600 accent-[#d4af37] focus:outline-none focus:ring-2 focus:ring-[#d4af37] focus:border-transparent'
@@ -37,12 +49,25 @@ export default function Contact() {
             </div>
 
             <div>
-              <h3 className="text-xs font-semibold text-gray-500 uppercase tracking-widest mb-4">Find us</h3>
-              <div className="flex flex-wrap gap-3">
-                {locations.map(({ city, icon }) => (
-                  <span key={city} className="flex items-center gap-1.5 px-4 py-2 rounded-full bg-gray-900 border border-brand-800 text-sm font-medium text-brand-400">
-                    {icon} {city}
-                  </span>
+              <h3 className="text-xs font-semibold text-gray-500 uppercase tracking-widest mb-5">Our locations</h3>
+              <div className="space-y-3">
+                {locations.map(({ city, address, mapsUrl }) => (
+                  <a
+                    key={city}
+                    href={mapsUrl}
+                    target="_blank"
+                    rel="noreferrer"
+                    className="flex items-start gap-3 p-4 rounded-xl bg-gray-950 border border-gray-800 hover:border-brand-700 transition-colors group"
+                  >
+                    <span className="text-brand-400 mt-0.5">📍</span>
+                    <div>
+                      <p className="text-sm font-semibold text-white group-hover:text-brand-400 transition-colors">{city}</p>
+                      <p className="text-xs text-gray-500 mt-0.5">{address}</p>
+                    </div>
+                    <svg className="w-4 h-4 text-gray-600 group-hover:text-brand-500 ml-auto mt-0.5 shrink-0 transition-colors" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
+                    </svg>
+                  </a>
                 ))}
               </div>
             </div>
@@ -122,6 +147,31 @@ export default function Contact() {
               </button>
             </form>
           )}
+        </div>
+
+        {/* Map embed */}
+        <div className="mt-16 rounded-2xl overflow-hidden border border-gray-800">
+          <div className="bg-gray-900 px-4 py-3 flex items-center justify-between">
+            <p className="text-sm font-medium text-gray-300">Nayaab Studios — Mohali</p>
+            <a
+              href="https://maps.app.goo.gl/Dkw7PEsjA9J1RqgY8"
+              target="_blank"
+              rel="noreferrer"
+              className="text-xs text-brand-400 hover:text-brand-300 transition-colors font-medium"
+            >
+              Open in Google Maps ↗
+            </a>
+          </div>
+          <iframe
+            title="Nayaab Studios Mohali"
+            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3430.255281286434!2d76.6872251!3d30.711223!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x390fef32621a5c8d%3A0x9f0523d9a3d600b1!2sNayaab%20Studios!5e0!3m2!1sen!2sin!4v1"
+            width="100%"
+            height="320"
+            style={{ border: 0, display: 'block' }}
+            allowFullScreen=""
+            loading="lazy"
+            referrerPolicy="no-referrer-when-downgrade"
+          />
         </div>
       </div>
     </section>
