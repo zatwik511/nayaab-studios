@@ -1,0 +1,13 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(vercel --version)",
+      "Bash(git push *)",
+      "WebFetch(domain:maps.app.goo.gl)",
+      "WebFetch(domain:www.google.com)",
+      "Bash(curl -sL -A \"Mozilla/5.0 \\(Windows NT 10.0; Win64; x64\\) AppleWebKit/537.36 \\(KHTML, like Gecko\\) Chrome/124.0.0.0 Safari/537.36\" \"https://maps.app.goo.gl/Dkw7PEsjA9J1RqgY8\")",
+      "Bash(grep -o 'Mohali[^\"\\\\\\\\]*\\\\|Chandigarh[^\"\\\\\\\\]*\\\\|Zirakpur[^\"\\\\\\\\]*\\\\|Phase[^\"\\\\\\\\]*\\\\|Sector[^\"\\\\\\\\]*')",
+      "Bash(curl -s \"https://nominatim.openstreetmap.org/reverse?lat=30.711223&lon=76.6898&format=json\" -H \"User-Agent: NayaabStudiosWebsite/1.0\")"
+    ]
+  }
+}
