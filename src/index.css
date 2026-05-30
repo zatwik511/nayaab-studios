@@ -5,8 +5,7 @@
 /* Elfsight Google Reviews — black & gold overrides */
 .eapps-google-reviews,
 .eapps-google-reviews-list,
-.eapps-google-reviews-item,
-.eapps-widget-toolbar {
+.eapps-google-reviews-item {
   background: transparent !important;
   background-color: transparent !important;
 }
@@ -19,18 +18,24 @@
 .eapps-google-reviews-item-author-name {
   color: #fff !important;
 }
-.eapps-google-reviews-item-author-date,
-.eapps-google-reviews-item-text-more {
+.eapps-google-reviews-item-author-date {
   color: #9ca3af !important;
 }
+/* "Read more" link — gold instead of blue */
+.eapps-google-reviews-item-text-more,
+.eapps-google-reviews-item a,
+.eapps-google-reviews-item span[role="button"],
+[class*="google-reviews"] a {
+  color: #d4af37 !important;
+}
+/* Stars — gold */
 .eapps-google-reviews-item-rating-star svg,
-.eapps-google-reviews-item-stars svg {
+.eapps-google-reviews-item-stars svg,
+.eapps-google-reviews-title-rating-star svg {
   fill: #d4af37 !important;
   color: #d4af37 !important;
 }
-.eapps-google-reviews-title-rating-star svg {
-  fill: #d4af37 !important;
-}
+/* Header text */
 .eapps-google-reviews-title-text,
 .eapps-google-reviews-title-rating-value {
   color: #fff !important;
@@ -38,8 +43,19 @@
 .eapps-google-reviews-title-rating-count {
   color: #9ca3af !important;
 }
-.eapps-link {
+/* Hide ALL Elfsight branding elements */
+.eapps-link,
+.eapps-widget-toolbar,
+[class*="eapps-widget-toolbar"],
+[class*="eapps-link"],
+a[href*="elfsight"],
+div[class*="powered"],
+div[class*="branding"] {
   display: none !important;
+  opacity: 0 !important;
+  pointer-events: none !important;
+  height: 0 !important;
+  overflow: hidden !important;
 }
 
 @layer base {

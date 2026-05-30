@@ -10,8 +10,14 @@ export default function Reviews() {
           </p>
         </div>
 
-        {/* Elfsight widget — styled via global CSS overrides below */}
-        <div className="elfsight-app-c4ab6b3b-faaa-4b25-8596-2090a6dfd21a" data-elfsight-app-lazy />
+        {/* Clip wrapper hides the Elfsight badge at the bottom */}
+        <div style={{ overflow: 'hidden', paddingBottom: '1px' }}>
+          <div
+            className="elfsight-app-c4ab6b3b-faaa-4b25-8596-2090a6dfd21a"
+            data-elfsight-app-lazy
+            style={{ marginBottom: '-48px' }}
+          />
+        </div>
       </div>
     </section>
   )
